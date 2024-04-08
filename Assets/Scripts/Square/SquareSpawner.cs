@@ -1,28 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SquareSpawner : MonoBehaviour
 {
     [SerializeField]
-    private SquareController[] _squarePrefabs;//массив префабов класса SquareController
+    private SquareController[] _squarePrefabs;
 
     [SerializeField]
-    private float _minSpawnTime;//минимальное время между спавном
+    private float _minSpawnTime;
     [SerializeField]
-    private float _maxSpawnTime;//максимальное время между спавном
+    private float _maxSpawnTime;
 
     [SerializeField]
-    private Transform _leftSpawnBorder;//левая граница спавна
+    private Transform _leftSpawnBorder;
     [SerializeField]
-    private Transform _rightSpawnBorder;//правая граница спавна
+    private Transform _rightSpawnBorder;
 
     [SerializeField]
-    private Transform _leftTargetBorder;//левая граница цели
-    [SerializeField]
-    private Transform _rightTargetBorder;//правая граница цели
+    private Transform _leftTargetBorder;
 
-    private float _delayBeforeNextSpawn;//задержка перед следующим спавном куба
+    [SerializeField] private Transform _rightTargetBorder;
+
+    private float _delayBeforeNextSpawn;
     
     private void Update()
     {
@@ -58,7 +56,7 @@ public class SquareSpawner : MonoBehaviour
     private SquareController SpawnRandomSquare()
     {
         var randomPrefabIndex = Random.Range(0, _squarePrefabs.Length);
-        var square = Instantiate(_squarePrefabs[randomPrefabIndex], transform);//сохраняем ссылку на созданный куб
+        var square = Instantiate(_squarePrefabs[randomPrefabIndex], transform);
         square.transform.position = GenerateRandomPointOnLine(_leftSpawnBorder, _rightSpawnBorder);
         return square;
     }

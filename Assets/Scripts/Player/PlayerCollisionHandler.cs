@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
@@ -17,15 +15,15 @@ public class PlayerCollisionHandler : MonoBehaviour
     {
         if (collider.CompareTag(GlobalConstants.ALLY_TAG))
         {
-            collider.enabled = false;//выключим коллайдер, чтобы коллизия не произошла 2 раза.
+            collider.enabled = false;
 
             collider.transform
-                .DOScale(Vector3.zero, _scaleChangeDuration)//изменим скейл до 0
+                .DOScale(Vector3.zero, _scaleChangeDuration)
                 .OnComplete(() =>
                 {
                     _squareCollected.Invoke();
                     Destroy(collider.gameObject);
-                });//по окончанию анимации разрушим объект
+                });
         }
 
         if (collider.CompareTag(GlobalConstants.ENEMY_TAG))

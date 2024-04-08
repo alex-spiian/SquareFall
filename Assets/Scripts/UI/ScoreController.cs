@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using DG.Tweening;
@@ -15,10 +13,10 @@ public class ScoreController : MonoBehaviour
     [SerializeField]
     private AudioSource _bestScoreSound;
     [SerializeField]
-    private float _scaleDuration; //время изменения скейла
+    private float _scaleDuration;
 
     [SerializeField]
-    private float _scaleFactor; //коэфицент изменения скейла
+    private float _scaleFactor;
 
     private int _currentScore;
     private int _bestScore; 

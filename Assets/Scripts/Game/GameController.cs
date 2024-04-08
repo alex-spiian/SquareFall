@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -29,8 +27,8 @@ public class GameController : MonoBehaviour
     
     public void RestartGame()
     {
-        var sceneName = SceneManager.GetActiveScene().name; //получаем название сцены
-        SceneManager.LoadSceneAsync(sceneName); //загружаем данную сцену
+        var sceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadSceneAsync(sceneName);
     }
     
     public void OnPlayerDied()

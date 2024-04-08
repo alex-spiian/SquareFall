@@ -1,22 +1,18 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private Transform _leftBorder; //левая граница бокса игрока
+    private Transform _leftBorder; 
     [SerializeField]
-    private Transform _rightBorder; //правая граница бокса игрока
+    private Transform _rightBorder;
 
     [SerializeField]
-    private float _speed; //скорость игрока
+    private float _speed;
 
-    private bool _isMovingRight; //направление движения игрока
-    private float _oneWayTime; //время прохождения пути
-    private float _currentTime; //текущее время
-
+    private bool _isMovingRight;
+    private float _oneWayTime;
+    private float _currentTime; 
     private void Awake()
     {
         _oneWayTime = Vector3.Distance(_leftBorder.position, _rightBorder.position) / _speed;
